@@ -26,7 +26,7 @@ import static org.fest.assertions.Assertions.*;
  * If you are interested in mocking a whole application, see the wiki for more details.
  *
  */
-public class MainControllerTest {
+public class ApplicationTest {
 
     @Test
     public void simpleCheck() {
@@ -49,11 +49,11 @@ public class MainControllerTest {
     public void indexShouldContainTheCorrectString() {
         running(fakeApplication(), new Runnable() {
             public void run() {
-                Result result = callAction(routes.ref.MainController.index());
+                Result result = callAction(routes.ref.Application.index());
                 assertThat(status(result)).isEqualTo(OK);
                 assertThat(contentType(result)).isEqualTo("text/html");
                 assertThat(charset(result)).isEqualTo("utf-8");
-                assertThat(contentAsString(result)).contains("Hello from Java");
+                assertThat(contentAsString(result)).contains("Hello Play Framework");
             }
         });
     }
