@@ -6,6 +6,8 @@ tmp
 .history
 dist
 /.idea
+/.cache
+/.target
 /*.iml
 /out
 /.idea_modules
